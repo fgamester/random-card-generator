@@ -75,6 +75,7 @@ function timerPrinter() {
   if (timer <= 0) {
     timer = 10;
     newCard();
+    timerPrinter();
   }
 }
 
@@ -83,10 +84,18 @@ function cardPrinter() {
   //guardando en una variable el lugar donde irá la carta generada e impresa
   const spot = document.getElementById("card-space");
   //valor minimo por defecto de width
-  if (widthInput.value == "" || widthInput.value < 150)
+  if (
+    widthInput.value == "" ||
+    widthInput.value < 150 ||
+    widthInput.value > 600
+  )
     widthInput.value = "200";
   //valor minimo por defecto de heght
-  if (heightInput.value == "" || heightInput.value < 150)
+  if (
+    heightInput.value == "" ||
+    heightInput.value < 150 ||
+    heightInput.value > 700
+  )
     heightInput.value = "300";
   //color verde de fondo
   document.body.style.background = "green";
